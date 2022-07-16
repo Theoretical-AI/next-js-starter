@@ -1,23 +1,20 @@
-import SmallCard from '../components/SmallCard';
-import { projectIcons } from '../components/Icons';
+import Styles from '../styles/components.module.css';
 
-import { projects } from '../utils/projectsData';
+import BasicForm from '../components/basicInfo';
+import EntryForm from '../components/entryInfo';
+import CustomizedAppbar from '../components/appbar';
+import VaccinationForm from '../components/vaccination';
+import ApplicationForm from '../components/form';
 
 const Home = () => (
   <div className="home">
-    <h1>What Can I Deploy to Static Apps?</h1>
-    <div className="card-grid">
-      {projects.map((project) => {
-        const Icon = projectIcons[project.id];
-        return (
-          <SmallCard
-            key={project.id}
-            Icon={Icon}
-            title={project.name}
-            slug={project.slug}
-          />
-        );
-      })}
+    <CustomizedAppbar />
+    <h1>Welcome to OIA System for Entry Permit Application</h1>
+    <h3>
+      Please fill-up the form below to complete your entry permit application
+    </h3>
+    <div className={Styles.form_layout}>
+      <ApplicationForm />
     </div>
   </div>
 );
